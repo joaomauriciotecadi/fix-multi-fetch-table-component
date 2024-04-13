@@ -7,6 +7,7 @@ import {
   PoMenuItem,
   PoMenuModule,
   PoPageModule,
+  PoTableModule,
   PoToolbarModule,
 } from '@po-ui/ng-components';
 
@@ -20,6 +21,7 @@ import {
     PoMenuModule,
     PoPageModule,
     HttpClientModule,
+    PoTableModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
@@ -28,6 +30,10 @@ export class AppComponent {
   readonly menus: Array<PoMenuItem> = [
     { label: 'Home', action: this.onClick.bind(this) },
   ];
+
+  serviceApiProducts: string = 'http://localhost:3000/api/produtos'
+  serviceApiStock: string = 'http://localhost:3000/api/estoque'
+  tableHeight: number = 300
 
   private onClick() {
     alert('Clicked in menu item');
